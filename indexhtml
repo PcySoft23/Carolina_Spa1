@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <title>libro de visitas</title>
+</head>
+<body>
+  <header>
+    <h2 align= "center">
+      Bienvenida al desarrollo Web
+    </h2>
+  </header>
+  <h3>Comentarios publicados</h3>
+  <ul>
+    <li>
+      <div type ="none" id="comment-posted">
+        <div id="new-comments" style="border: 1px color: black"><hr widht="800" align ="left"></div>
+      </div>
+    </li>
+  </ul>
+  <form>
+    <h3>Comenta</h3>
+    <input type="button" value="large" id="big-text" class="size-text">
+    <input type="button" value="medium" id="medium-text" class="size-text" >
+    <input type="button" value="small" id="small-text" class="size-text">
+    <input type="button" value="color de texto" id="text-color">
+    <input type="button" value="color de fondo " id="background-color">
+    <input type="button" value="left" class="align-text">
+    <input type="button" value="center" class="align-text">
+    <input type="button" value="right" class="align-text">
+    <input type="file" id="select-image">
+    <!-- <select name="" id=""></select> -->
+    <div>
+      <textarea name="Ingresar el comentario" id="text-comment" cols="30" rows="10" placeholder="Escribe aqui tu comentario" value="Comentario"></textarea>
+    </div>
+  </form>
+  
+  <div>
+    <h4>
+      Como se ve tu comentario
+    </h4>
+    <div>
+      <p name="real-time-comment" id="real-time-comment"></p>
+      <img src="" alt="" id="real-time-image">
+    </div>
+    <hr>
+    <input type="submit" value="Enviar" id="send">
+  </div>
+  <script src="js/app.js"></script>
+</body>
+</html>
+ to join this conversation on GitHub. Alrea
