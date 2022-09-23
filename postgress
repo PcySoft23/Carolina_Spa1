@@ -1,0 +1,19 @@
+-- :name insert-or-get-image! :<! :1
+/* :doc insert an image, or retrieve existing, and return the id, uri, and
+   public URL as determined by the provided `:bucket` and `:images-host`.
+*/
+WITH new_img AS (
+  INSERT INTO image (uri, fmt, size, device_id, os_version_id)
+  VALUES (:uri, :fmt, :size, :device-id, :os-version-id)
+  ON CONFLICT (uri) DO NOTHING
+  RETURNING id, uri, 
+    gcs_uri_to_public_url(uri, COALESCE(:bucket, ''), COALESCE(:images-host, ''))
+    AS "url"
+)
+SELECT * from new_img
+UNION
+SELECT id, uri, 
+    gcs_uri_to_public_url(uri, COALESCE(:bucket, ''), COALESCE(:images-host, ''))
+    AS "url"
+FROM image
+WHERE uri = :uri
